@@ -14,9 +14,9 @@ Este documento recopila todas las evidencias y respuestas de la practica.
 - Evidencia: ![alt text](evidencias/Imagen-instalacion-nginx.png)
 
 2) Configuracion cargada
-- Que demuestra:
-- Comando:
-- Evidencia:
+- Que demuestra: Que la configuracion personalizada de Nginx se ha cargado correctamente en el contenedor.
+- Comando: docker exec -it nginx-ssl sh -c "ls -la /etc/nginx/conf.d/"
+- Evidencia: ![alt text](evidencias/Imagen-configuracion-cargada.png)
 
 3) Resolucion de nombres
 - Que demuestra:
