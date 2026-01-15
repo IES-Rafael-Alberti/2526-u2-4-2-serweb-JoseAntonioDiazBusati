@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-ssl
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Configuración de Nginx
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+      # Certificados
+      - ./nginx-selfsigned.crt:/etc/ssl/certs/nginx-selfsigned.crt:ro
+      - ./nginx-selfsigned.key:/etc/ssl/private/nginx-selfsigned.key:ro
+      # Contenido web
+      - ./webdata:/usr/share/nginx/html:ro
+    restart: unless-stopped
